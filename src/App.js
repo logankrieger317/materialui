@@ -13,7 +13,7 @@ function App() {
         alignContent:'center',
         justifyContent:'center',
         height:'90vh',
-        border:'solid',
+        
         
         }}>
       
