@@ -8,6 +8,7 @@ function App() {
   return (
     <Grid container>
       <Navbar />
+      This Is The Home Screen
       <Outlet />
     </Grid>
   );
