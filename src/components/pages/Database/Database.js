@@ -1,9 +1,13 @@
 import React from 'react'
 import Navbar from '../../Navbar/navbar'
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import CommonButton from '../../CommonButton/CommonButton';
+import Footer from '../../Footer';
 
 
 function Database() {
+
+  
 
 const rows: GridRowsProp = [
   { id: 1, col1: 'Luke', col2: 'Skywalker', col3: 'LSkywalker@rebel.net', col4: '254.585.5874', col5: '100' },
@@ -27,14 +31,36 @@ const columns: GridColDef[] = [
   { field: 'col5', headerName: 'Unit Number', width: 150 },
 ];
 
+function handleClick(event){
+  console.log('clicked');
+}
+
+
   return (
     <>
     <Navbar/>
-    <h1 style={{display:'flex', justifyContent:'center'}}>Customer List</h1>
-    <div style={{ marginLeft:'25%', marginTop:'25px',height: 800, width: '80%' }}>
-      <DataGrid style={{marginRight: "25%"}} rows={rows} columns={columns} pageSize={5} />
-    </div>
     
+    <h1 style={{
+        display:'flex', 
+        justifyContent:'center'
+      }}
+      > 
+      Customer List
+      </h1>
+  
+    <CommonButton
+      sx={{marginLeft:'75%'}}
+      onClick={() => {
+        handleClick()
+      }}
+    >
+    Add Customer 
+    </CommonButton>
+
+    <div style={{ marginLeft:'20%', marginTop:'25px',height:'60%', width: '85%' }}>
+      <DataGrid style={{marginRight: "20%"}} rows={rows} columns={columns} pageSize={5} />
+    </div>
+    <Footer/>
     </>
   )
 }
