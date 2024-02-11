@@ -3,6 +3,9 @@ import Navbar from '../../Navbar/navbar'
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 import CommonButton from '../../CommonButton/CommonButton';
 import Footer from '../../Footer';
+import { CssBaseline } from '@mui/material';
+import { Container } from '@mui/material';
+
 
 
 function Database() {
@@ -40,6 +43,10 @@ function handleClick(event){
     <>
     <Navbar/>
     
+     <React.Fragment>
+      <CssBaseline />
+      <Container style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', width:'100vw'}}>
+        
     <h1 style={{
         display:'flex', 
         justifyContent:'center'
@@ -49,7 +56,8 @@ function handleClick(event){
       </h1>
   
     <CommonButton
-      sx={{marginLeft:'75%'}}
+      variant='contained'
+      sx={{marginLeft:'0'}}
       onClick={() => {
         handleClick()
       }}
@@ -57,9 +65,11 @@ function handleClick(event){
     Add Customer 
     </CommonButton>
 
-    <div style={{ marginLeft:'20%', marginTop:'25px',height:'60%', width: '85%' }}>
-      <DataGrid style={{marginRight: "20%"}} rows={rows} columns={columns} pageSize={5} />
+    <div style={{ marginLeft:'20%', marginTop:'25px',height:'60%',overflow:'scroll' }}>
+      <DataGrid  rows={rows} columns={columns} pageSize={5} />
     </div>
+      </Container>
+    </React.Fragment>
     <Footer/>
     </>
   )
