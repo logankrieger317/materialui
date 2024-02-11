@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/navbar';
 import  Grid  from '@mui/material/Grid';
 import { Outlet } from 'react-router-dom';
 import Footer from './components/Footer';
-
+import CTA from '../src/components/Modals/CTA'
 
 function App() {
   return (
@@ -18,12 +18,9 @@ function App() {
         }}>
       
       <Navbar />
-
       <div style={{fontWeight:'bold', fontSize:'26px'}}>
-        Please Follow
-        <a href='https://github.com/logankrieger317/materialui' style={{margin:'5px'}}>
-         This Link </a> 
-        for the Repository
+        <CTA/>
+        
       </div>
       <Outlet />
     </Grid>
